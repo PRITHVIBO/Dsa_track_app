@@ -26,3 +26,12 @@
 - Data is stored in the current browser profile. Export **Backup** regularly. Clearing browser data or moving to another computer will not transfer data unless you import your JSON backup.
 - Code and long notes consume browser local-storage capacity. If the browser storage limit is reached, export a backup and remove older records as needed.
 - Clear a saved brute-force or optimized solution directly from the Studio if you want to replace it or remove the stored code.
+
+
+## Connect progress to DayPilot
+
+The **Connect DayPilot** button connects this browser’s tracker to your existing DayPilot account. In DayPilot 2.4, open **Connections**, select this tracker, enter the origin shown by the connector (for example `http://localhost:8000`), and create a connection. Paste its ingestion URL, connection ID, and token into this tracker, then choose **Save and send summary**.
+
+Automatic sync is optional and runs only while the tracker is open. It sends aggregate completion, attempt, time, and review counts where available; saved solutions, queries, notes, and full records remain in this tracker. Summary sync is not a full backup or two-way synchronization. Existing local storage and backup/import behavior are preserved. Serve the tracker over HTTPS or localhost; direct `file://` pages cannot connect.
+
+The DayPilot server must have the companion 2.4 dashboard update deployed. Tokens expire after 90 days and can be revoked in DayPilot. If syncing fails, the connector keeps local progress and displays an error; it does not replace tracker data.
